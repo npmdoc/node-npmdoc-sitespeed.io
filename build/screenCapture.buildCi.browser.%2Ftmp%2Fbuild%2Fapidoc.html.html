@@ -1,0 +1,1621 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://www.sitespeed.io">sitespeed.io (v4.7.0)</a>
+</h1>
+<h4>Analyze the web performance of your site</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io">module sitespeed.io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.run">
+            function <span class="apidocSignatureSpan">sitespeed.io.</span>run
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.cli</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.cliUtil</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.filterRegistry</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.flattenMessage</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.logging</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.metricsFilter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.pluginLoader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.queueStatistics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.statsHelpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.url_source</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sitespeed.io.</span>io.util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.cli">module sitespeed.io.cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.cli.parseCommandLine">
+            function <span class="apidocSignatureSpan">sitespeed.io.cli.</span>parseCommandLine
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.cliUtil">module sitespeed.io.cliUtil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.cliUtil.getAliases">
+            function <span class="apidocSignatureSpan">sitespeed.io.cliUtil.</span>getAliases
+            <span class="apidocSignatureSpan">(urls)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.cliUtil.getURLs">
+            function <span class="apidocSignatureSpan">sitespeed.io.cliUtil.</span>getURLs
+            <span class="apidocSignatureSpan">(urls)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.filterRegistry">module sitespeed.io.filterRegistry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.addFilterForType">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>addFilterForType
+            <span class="apidocSignatureSpan">(filter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.clearAll">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>clearAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.filterMessage">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>filterMessage
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.getFilterForType">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getFilterForType
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.getFilters">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getFilters
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.getTypes">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getTypes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.registerFilterForType">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>registerFilterForType
+            <span class="apidocSignatureSpan">(filter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.filterRegistry.removeFilter">
+            function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>removeFilter
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.flattenMessage">module sitespeed.io.flattenMessage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.flattenMessage.flattenMessageData">
+            function <span class="apidocSignatureSpan">sitespeed.io.flattenMessage.</span>flattenMessageData
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.flattenMessage.keypathFromUrl">
+            function <span class="apidocSignatureSpan">sitespeed.io.flattenMessage.</span>keypathFromUrl
+            <span class="apidocSignatureSpan">(url, includeQueryParams)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.logging">module sitespeed.io.logging</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.logging.configure">
+            function <span class="apidocSignatureSpan">sitespeed.io.logging.</span>configure
+            <span class="apidocSignatureSpan">(options, logDir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.metricsFilter">module sitespeed.io.metricsFilter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.metricsFilter.filterMetrics">
+            function <span class="apidocSignatureSpan">sitespeed.io.metricsFilter.</span>filterMetrics
+            <span class="apidocSignatureSpan">(json, metricPaths)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.pluginLoader">module sitespeed.io.pluginLoader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.pluginLoader.loadPlugins">
+            function <span class="apidocSignatureSpan">sitespeed.io.pluginLoader.</span>loadPlugins
+            <span class="apidocSignatureSpan">(pluginNames)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.pluginLoader.parsePluginNames">
+            function <span class="apidocSignatureSpan">sitespeed.io.pluginLoader.</span>parsePluginNames
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.queueStatistics">module sitespeed.io.queueStatistics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.queueStatistics.generateStatistics">
+            function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>generateStatistics
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.queueStatistics.registerProcessingTime">
+            function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>registerProcessingTime
+            <span class="apidocSignatureSpan">(message, plugin, nanos)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.queueStatistics.registerQueueTime">
+            function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>registerQueueTime
+            <span class="apidocSignatureSpan">(message, plugin, nanos)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.statsHelpers">module sitespeed.io.statsHelpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.statsHelpers.pushGroupStats">
+            function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>pushGroupStats
+            <span class="apidocSignatureSpan">(target, domainTarget, path, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.statsHelpers.pushStats">
+            function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>pushStats
+            <span class="apidocSignatureSpan">(target, path, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.statsHelpers.setStatsSummary">
+            function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>setStatsSummary
+            <span class="apidocSignatureSpan">(target, path, stats)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.statsHelpers.summarizeStats">
+            function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>summarizeStats
+            <span class="apidocSignatureSpan">(stats, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.url_source">module sitespeed.io.url_source</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.url_source.findUrls">
+            function <span class="apidocSignatureSpan">sitespeed.io.url_source.</span>findUrls
+            <span class="apidocSignatureSpan">(queue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.url_source.open">
+            function <span class="apidocSignatureSpan">sitespeed.io.url_source.</span>open
+            <span class="apidocSignatureSpan">(context, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sitespeed.io.util">module sitespeed.io.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.util.throwIfMissing">
+            function <span class="apidocSignatureSpan">sitespeed.io.util.</span>throwIfMissing
+            <span class="apidocSignatureSpan">(options, keys, namespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sitespeed.io.util.toArray">
+            function <span class="apidocSignatureSpan">sitespeed.io.util.</span>toArray
+            <span class="apidocSignatureSpan">(arrayLike)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io" id="apidoc.module.sitespeed.io">module sitespeed.io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.run" id="apidoc.element.sitespeed.io.run">
+        function <span class="apidocSignatureSpan">sitespeed.io.</span>run
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run(options) {
+  const url = options.urls[0];
+  const timestamp = moment();
+
+  if (options.utc) {
+    timestamp.utc();
+  }
+
+  const storageManager = new StorageManager(url, timestamp, options);
+  const dataCollection = new DataCollection();
+
+  return storageManager.createDataDir('logs').then((logDir) =&gt; {
+    logging.configure(options, logDir);
+  }).then(() =&gt; {
+    if (log.isEnabledFor(log.VERBOSE)) {
+      Promise.longStackTraces();
+    }
+    log.info('Versions OS: %s nodejs: %s sitespeed.io: %s browsertime: %s coach: %s', os.platform() + ' ' + os.release(), process
+.version, packageInfo.version, packageInfo.dependencies.browsertime, packageInfo.dependencies.webcoach);
+  }).then(() =&gt; {
+    return loader.parsePluginNames(options)
+  }).then((pluginNames) =&gt; {
+    const plugins = options.plugins;
+    if (plugins) {
+      pullAll(pluginNames, toArray(plugins.disable));
+      pluginNames = union(pluginNames, toArray(plugins.load));
+
+      if (plugins.list) {
+        log.info('The following plugins are enabled: %s', pluginNames.join(', '));
+      }
+    }
+    // if we run without cli, we still want the default options
+    // in options to use it in output
+    if (allInArray(['browsertime'], pluginNames)) {
+      options.browsertime = merge({}, browsertimeConfig, options.browsertime);
+    }
+    if (allInArray(['webpagetest'], pluginNames)) {
+      options.webpagetest = merge({}, webpagetestConfig, options.webpagetest);
+    }
+    if (allInArray(['browsertime', 'coach'], pluginNames)) {
+      options.browsertime = merge({}, options.browsertime, {
+        coach: true
+      });
+    }
+    if (allInArray(['browsertime', 'screenshot'], pluginNames)) {
+      options.browsertime = merge({}, options.browsertime, {
+        screenshot: true
+      });
+    }
+    return pluginNames;
+  })
+    .then((pluginNames) =&gt; {
+
+      return loader.loadPlugins(pluginNames)
+        .then((plugins) =&gt; {
+
+          let urlSources = [urlSource];
+
+          const allPlugins = urlSources.concat(plugins),
+            queueHandler = new QueueHandler(plugins, options);
+
+          return runOptionalFunction(allPlugins, 'open', {
+            storageManager,
+            dataCollection,
+            timestamp,
+            budget: budgetResult,
+            log
+          }, options)
+            .then(() =&gt; runOptionalFunction(allPlugins, 'postOpen', options))
+            .then(() =&gt; queueHandler.run(urlSources))
+            .tap((errors) =&gt; runOptionalFunction(allPlugins, 'close', options, errors))
+            .tap((errors) =&gt; runOptionalFunction(allPlugins, 'postClose', options, errors));
+        })
+    })
+    .then((errors) =&gt; {
+      log.info('Finished analysing %s', url);
+      if (options.summary &amp;&amp; options.summary.out) {
+        console.log(options.summary.out); // eslint-disable-line no-console
+      }
+      return {
+        errors,
+        budgetResult
+      };
+    })
+    .catch((err) =&gt; {
+      log.error(err);
+      throw err;
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.cli" id="apidoc.module.sitespeed.io.cli">module sitespeed.io.cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.cli.parseCommandLine" id="apidoc.element.sitespeed.io.cli.parseCommandLine">
+        function <span class="apidocSignatureSpan">sitespeed.io.cli.</span>parseCommandLine
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseCommandLine() {
+  let parsed = yargs
+    .env('SITESPEED_IO')
+    .usage('$0 [options] &lt;url&gt;/&lt;file&gt;')
+    .require(1, 'urlOrFile')
+    .version(() =&gt; `${packageInfo.name} ${packageInfo.version}`)
+    .option('debug', {
+      default: false,
+      describe: 'Debug mode logs all internal messages to the console.',
+      type: 'boolean'
+    })
+    .option('verbose', {
+      alias: 'v',
+      describe: 'Verbose mode prints progress messages to the console. Enter up to three times (-vvv)' +
+        ' to increase the level of detail.',
+      type: 'count'
+    })
+<span class="apidocCodeCommentSpan">    /*
+     Browsertime cli options
+     */
+</span>    .option('browsertime.browser', {
+      alias: ['b', 'browser'],
+      default: browsertimeConfig.browser,
+      describe: 'Choose which Browser to use when you test.',
+      choices: ['chrome', 'firefox'],
+      group: 'Browser'
+    })
+    .option('browsertime.iterations', {
+      alias: 'n',
+      default: browsertimeConfig.iterations,
+      describe: 'How many times you want to test each page',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.profile', {
+      alias: ['c', 'connectivity'],
+      default: browsertimeConfig.connectivity.profile,
+      choices: ['3g', '3gfast', '3gslow', '3gem', '2g', 'cable', 'native', 'custom'],
+      describe: 'The connectivity profile.',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.downstreamKbps', {
+      default: browsertimeConfig.connectivity.downstreamKbps,
+      alias: ['downstreamKbps'],
+      describe: 'This option requires --connectivity be set to "custom".',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.upstreamKbps', {
+      default: browsertimeConfig.connectivity.upstreamKbps,
+      alias: ['upstreamKbps'],
+      describe: 'This option requires --connectivity be set to "custom".',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.latency', {
+      default: browsertimeConfig.connectivity.latency,
+      alias: ['latency'],
+      describe: 'This option requires --connectivity be set to "custom".',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.tsproxy.port', {
+      default: browsertimeConfig.connectivity.tsproxy.port,
+      describe: 'The port used for TSProxy',
+      group: 'Browser'
+    })
+    .option('browsertime.connectivity.engine', {
+      default: browsertimeConfig.connectivity.engine,
+      choices: ['tc', 'tsproxy', 'external'],
+      describe: 'The engine for connectivity. TSProxy needs Python 2.7. TC (Linux Traffic Control) needs tc work but will only setup
+ upload and latency. Use external if you set the connectivity outside of Browsertime.',
+      group: 'Browser'
+    })
+    .option('browsertime.pageCompleteCheck', {
+      describe: 'Supply a Javascript that decides when the browser is finished loading the page and can start to collect metrics
+. The Javascript snippet is repeatedly queried to see if page has completed loading (indicated by the script returning true). Use
+ it to fetch timings happening after the loadEventEnd.',
+      group: 'Browser'
+    })
+    .option('browsertime.script', {
+      describe: 'Add custom Javascript that collect metrics and run after the page has finished loading. Note that --script can
+be passed multiple times if you want to collect multiple metrics. The metrics will automatically be pushed to the summary/detailed
+ summary and each individual page + sent to Graphite/InfluxDB.',
+      alias: ['script'],
+      group: 'Browser'
+    })
+    .option('browsertime.selenium.url', {
+      describe: 'Configure the path to the Selenium server when fetching timings using browsers. If not configured the supplied
+NodeJS/Selenium version is used.',
+      group: 'Browser'
+    })
+    .option('browsertime.viewPort', {
+      default: browsertimeConfig.viewPort,
+      describe: 'The browser view port size WidthxHeight like 400x300',
+      group: 'Browser'
+    })
+    .option('browsertime.userAgent', {
+      describe: 'The full User Agent string, defaults to the User Agent used by the browsertime.browser option.',
+      group: 'Browser' ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.cliUtil" id="apidoc.module.sitespeed.io.cliUtil">module sitespeed.io.cliUtil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.cliUtil.getAliases" id="apidoc.element.sitespeed.io.cliUtil.getAliases">
+        function <span class="apidocSignatureSpan">sitespeed.io.cliUtil.</span>getAliases
+        <span class="apidocSignatureSpan">(urls)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAliases(urls) {
+  const urlMetaData = {};
+  urls = urls.map((url) =&gt; url.trim());
+
+  for (var url of urls) {
+    if (url.startsWith('http')) {
+      return {};
+    } else {
+      const filePath = url;
+      var lines = fs.readFileSync(filePath).toString().split('\n');
+      for (let line of lines) {
+        if (line.trim().length &gt; 0) {
+          let url, alias = null;
+          let lineArray = line.split(" ", 2);
+          url = lineArray[0].trim();
+          if(lineArray[1]) {
+            alias = lineArray[1].trim();
+          }
+          if(url &amp;&amp; alias) {
+              urlMetaData[url] = {'alias' : alias};
+          }
+        }
+      }
+    }
+  }
+  return urlMetaData;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+  }
+
+  if (argv.summaryDetail) argv.summary = true;
+
+  return {
+    urls: cliUtil.getURLs(argv._),
+    urlsMetaData: cliUtil.<span class="apidocCodeKeywordSpan">getAliases</span>(argv._),
+    options: argv,
+    explicitOptions: explicitOptions
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.cliUtil.getURLs" id="apidoc.element.sitespeed.io.cliUtil.getURLs">
+        function <span class="apidocSignatureSpan">sitespeed.io.cliUtil.</span>getURLs
+        <span class="apidocSignatureSpan">(urls)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getURLs(urls) {
+  const allUrls = [];
+  urls = urls.map((url) =&gt; url.trim());
+
+  for (var url of urls) {
+    if (url.startsWith('http')) {
+      allUrls.push(url);
+    } else {
+      const filePath = url;
+      var lines = fs.readFileSync(filePath).toString().split('\n');
+      for (let line of lines) {
+        if (line.trim().length &gt; 0) {
+          let lineArray = line.split(" ", 2);
+          let url = lineArray[0].trim();
+          if(url) {
+            allUrls.push(url);
+          }
+        }
+      }
+    }
+  }
+  return allUrls;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      encoding: 'utf8'
+    });
+  }
+
+  if (argv.summaryDetail) argv.summary = true;
+
+  return {
+    urls: cliUtil.<span class="apidocCodeKeywordSpan">getURLs</span>(argv._),
+    urlsMetaData: cliUtil.getAliases(argv._),
+    options: argv,
+    explicitOptions: explicitOptions
+  };
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.filterRegistry" id="apidoc.module.sitespeed.io.filterRegistry">module sitespeed.io.filterRegistry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.addFilterForType" id="apidoc.element.sitespeed.io.filterRegistry.addFilterForType">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>addFilterForType
+        <span class="apidocSignatureSpan">(filter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFilterForType(filter, type) {
+  const filters = filterForType[type];
+  if (filters.indexOf(filter) === -1) {
+    filterForType[type].push(filter);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.clearAll" id="apidoc.element.sitespeed.io.filterRegistry.clearAll">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>clearAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearAll() {
+  filterForType = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.filterMessage" id="apidoc.element.sitespeed.io.filterRegistry.filterMessage">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>filterMessage
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterMessage(message) {
+  const filterConfig = this.getFilterForType(message.type);
+
+  if (!filterConfig) {
+    return message;
+  }
+
+  const filteredMessage = clone(message);
+  filteredMessage.data = metricsFilter.filterMetrics(filteredMessage.data, filterConfig);
+  return filteredMessage;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.getFilterForType" id="apidoc.element.sitespeed.io.filterRegistry.getFilterForType">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getFilterForType
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilterForType(type) {
+  return filterForType[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+
+  clearAll() {
+filterForType = {};
+  },
+
+  filterMessage(message) {
+const filterConfig = this.<span class="apidocCodeKeywordSpan">getFilterForType</span>(message.type);
+
+if (!filterConfig) {
+  return message;
+}
+
+const filteredMessage = clone(message);
+filteredMessage.data = metricsFilter.filterMetrics(filteredMessage.data, filterConfig);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.getFilters" id="apidoc.element.sitespeed.io.filterRegistry.getFilters">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getFilters
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilters() {
+  return filterForType;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.getTypes" id="apidoc.element.sitespeed.io.filterRegistry.getTypes">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>getTypes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTypes() {
+  return Object.keys(filterForType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.registerFilterForType" id="apidoc.element.sitespeed.io.filterRegistry.registerFilterForType">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>registerFilterForType
+        <span class="apidocSignatureSpan">(filter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerFilterForType(filter, type) {
+  filterForType[type] = filter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.filterRegistry.removeFilter" id="apidoc.element.sitespeed.io.filterRegistry.removeFilter">
+        function <span class="apidocSignatureSpan">sitespeed.io.filterRegistry.</span>removeFilter
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFilter(type) {
+  filterForType[type] = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.flattenMessage" id="apidoc.module.sitespeed.io.flattenMessage">module sitespeed.io.flattenMessage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.flattenMessage.flattenMessageData" id="apidoc.element.sitespeed.io.flattenMessage.flattenMessageData">
+        function <span class="apidocSignatureSpan">sitespeed.io.flattenMessage.</span>flattenMessageData
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flattenMessageData(message) {
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) &amp;&amp; isFinite(n);
+  }
+
+  function recursiveFlatten(target, keyPrefix, value, type) {
+    // super simple version to avoid flatten HAR and screenshot data
+    if (keyPrefix.match(/(screenshots\.|har\.)/)) {
+        return;
+    }
+
+    // Google is overloading User Timing marks
+    // See https://github.com/sitespeedio/browsertime/issues/257
+    if (keyPrefix.indexOf('userTimings.marks.goog_') &gt; -1) {
+      return;
+    }
+
+    // Google is overloading User Timing marks = the same using WebPageTest
+    // See https://github.com/sitespeedio/browsertime/issues/257
+    if (keyPrefix.indexOf('userTimes.goog_') &gt; -1) {
+       return;
+    }
+
+    const valueType = typeof value;
+
+    switch (valueType) {
+      case 'number':
+      {
+        target[keyPrefix] = value;
+      }
+        break;
+      case 'object':
+      {
+        if (value === null) {
+          break;
+        }
+
+        Object.keys(value).forEach((key) =&gt; {
+
+          // Hey are you coming to the future from 1980s? Please don't
+          // look at this code, it's a ugly hack to make sure we can send assets
+          // to Graphite and don't send them with array position, instead
+          // use the url to generate the key
+
+          if (type === 'pagexray.pageSummary' &amp;&amp; keyPrefix === 'assets') {
+              recursiveFlatten(target, joinNonEmpty([keyPrefix, toSafeKey(value[key].url)], '.'), value[key], type);
+          }
+          else {
+            recursiveFlatten(target, joinNonEmpty([keyPrefix, toSafeKey(key)], '.'), value[key], type);
+          }
+        });
+      }
+        break;
+      case 'string':
+      {
+        if (isNumeric(value)) {
+          target[keyPrefix] = parseFloat(value);
+        }
+      }
+        break;
+      case 'boolean':
+      {
+        target[keyPrefix] = value ? 1 : 0;
+      }
+        break;
+      case 'undefined':
+      {
+        // take care of faulty values, add a log in the future
+      }
+        break;
+      default:
+        throw new Error('Unhandled value type ' + valueType + ' found when flattening data for prefix ' + keyPrefix);
+    }
+  }
+
+  let retVal = {};
+  recursiveFlatten(retVal, '', message.data, message.type);
+  return retVal;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.flattenMessage.keypathFromUrl" id="apidoc.element.sitespeed.io.flattenMessage.keypathFromUrl">
+        function <span class="apidocSignatureSpan">sitespeed.io.flattenMessage.</span>keypathFromUrl
+        <span class="apidocSignatureSpan">(url, includeQueryParams)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keypathFromUrl(url, includeQueryParams)
+{
+  function flattenQueryParams(params) {
+    return Object.keys(params).reduce((result, key) =&gt;
+        joinNonEmpty([result, key, params[key]], '_'),
+      '');
+  }
+
+  url = urlParser.parse(url, !!includeQueryParams);
+
+  let path = toSafeKey(url.pathname);
+
+  if (includeQueryParams) {
+    path = joinNonEmpty([path, toSafeKey(flattenQueryParams(url.query))], '_');
+  }
+
+  const keys = [
+    toSafeKey(url.hostname),
+    path
+  ];
+
+  return joinNonEmpty(keys, '.');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.logging" id="apidoc.module.sitespeed.io.logging">module sitespeed.io.logging</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.logging.configure" id="apidoc.element.sitespeed.io.logging.configure">
+        function <span class="apidocSignatureSpan">sitespeed.io.logging.</span>configure
+        <span class="apidocSignatureSpan">(options, logDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function configure(options, logDir) {
+  options = options || {};
+
+  let level = log.INFO;
+  switch (options.verbose) {
+    case 1:
+      level = log.DEBUG;
+      break;
+    case 2:
+      level = log.VERBOSE;
+      break;
+    case 3:
+      level = log.TRACE;
+      break;
+    default:
+      break;
+  }
+
+  if (options.silent) {
+    level = log.NONE;
+  }
+
+  log.basicConfig({
+    'format': '[%(date)s] %(message)s',
+    'level': level
+  });
+
+  log.addHandler(new log.handlers.File(logDir + '/sitespeed.io.log'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.metricsFilter" id="apidoc.module.sitespeed.io.metricsFilter">module sitespeed.io.metricsFilter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.metricsFilter.filterMetrics" id="apidoc.element.sitespeed.io.metricsFilter.filterMetrics">
+        function <span class="apidocSignatureSpan">sitespeed.io.metricsFilter.</span>filterMetrics
+        <span class="apidocSignatureSpan">(json, metricPaths)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterMetrics(json, metricPaths) {
+  metricPaths = toArray(metricPaths);
+  if (typeof json !== 'object')
+    return undefined;
+
+  return metricPaths.reduce((result, path) =&gt; {
+    path = normalizePath(path);
+
+    const firstWildcard = path.indexOf('*.');
+
+    if (firstWildcard === -1) {
+      mergePath(result, json, path);
+    } else if (firstWildcard === 0) {
+      const leafPath = path.substring(2);
+
+      reduce((json), (result, value, key) =&gt; {
+        if (typeof value === 'object') {
+          const leaf = this.filterMetrics(value, leafPath);
+
+          if (!isEmpty(leaf)) {
+            result[key] = leaf;
+          }
+        }
+        return result;
+      }, result);
+    } else {
+      let branchPath = path.substring(0, firstWildcard);
+      if (branchPath.endsWith('.'))
+        branchPath = branchPath.slice(0, -1);
+
+
+      let branch = get(json, branchPath);
+      const leafPath = path.substring(firstWildcard + 2);
+      const leafs = Object.keys(branch).reduce((result, key) =&gt; {
+        const leaf = this.filterMetrics(branch[key], leafPath);
+
+        if (!isEmpty(leaf)) {
+          result[key] = leaf;
+        }
+        return result;
+      }, {});
+
+      branch = get(result, branchPath, leafs);
+      branch = merge(branch, leafs);
+      if (!isEmpty(branch)) {
+        return set(result, branchPath, branch);
+      }
+    }
+
+    return result;
+  }, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    const filterConfig = this.getFilterForType(message.type);
+
+    if (!filterConfig) {
+      return message;
+    }
+
+    const filteredMessage = clone(message);
+    filteredMessage.data = metricsFilter.<span class="apidocCodeKeywordSpan">filterMetrics</span>(filteredMessage.data, filterConfig
+);
+    return filteredMessage;
+  }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.pluginLoader" id="apidoc.module.sitespeed.io.pluginLoader">module sitespeed.io.pluginLoader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.pluginLoader.loadPlugins" id="apidoc.element.sitespeed.io.pluginLoader.loadPlugins">
+        function <span class="apidocSignatureSpan">sitespeed.io.pluginLoader.</span>loadPlugins
+        <span class="apidocSignatureSpan">(pluginNames)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadPlugins(pluginNames) {
+  return Promise.resolve(pluginNames).map((name) =&gt; {
+    try {
+      const plugin = require(path.join(pluginsDir, name));
+      if (!plugin.name) {
+        plugin.name = () =&gt; name;
+      }
+      return plugin;
+    } catch (err) {
+      try {
+        return require(path.resolve(process.cwd(), name));
+     } catch(error) {
+       console.error('Couldn\'t load plugin %s: %s', name, err); // eslint-disable-line no-console
+       // if it fails here, let it fail hard
+       throw error;
+     }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.pluginLoader.parsePluginNames" id="apidoc.element.sitespeed.io.pluginLoader.parsePluginNames">
+        function <span class="apidocSignatureSpan">sitespeed.io.pluginLoader.</span>parsePluginNames
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parsePluginNames(options) {
+  // if we don't use the cli, this will work out fine as long
+  // we configure only what we need
+  const possibleConfiguredPlugins = options.explicitOptions || options;
+  const isDefaultOrConfigured = (name) =&gt; (defaultPlugins.has(name) || typeof possibleConfiguredPlugins[name] === 'object');
+  const addMessageLoggerIfDebug = (pluginNames) =&gt; {
+    if (options.debug) {
+      // Need to make sure logger is first, so message logs appear
+      // before messages are handled by other plugins
+      pluginNames = ['messagelogger'].concat(pluginNames);
+    }
+    return pluginNames;
+  };
+
+  return fs.readdirAsync(pluginsDir)
+    .map((name) =&gt; path.basename(name, '.js'))
+    .then((builtins) =&gt; {
+      let plugins = builtins.filter(isDefaultOrConfigured);
+      return addMessageLoggerIfDebug(plugins);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.queueStatistics" id="apidoc.module.sitespeed.io.queueStatistics">module sitespeed.io.queueStatistics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.queueStatistics.generateStatistics" id="apidoc.element.sitespeed.io.queueStatistics.generateStatistics">
+        function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>generateStatistics
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateStatistics() {
+  const statOptions = {
+    percentiles: [0, 100],
+    includeSum: true
+  };
+
+  const byPluginName = Array.from(pluginNames).reduce((summary, pluginName) =&gt; {
+    set(summary, ['queueTime', pluginName],
+      stats.summarizeStats(get(queueTimeByPluginName, pluginName), statOptions));
+    set(summary, ['processingTime', pluginName],
+      stats.summarizeStats(get(processingTimeByPluginName, pluginName), statOptions));
+
+    return summary;
+  }, {});
+
+  const byMessageType = Array.from(messageTypes).reduce((summary, messageType) =&gt; {
+    set(summary, ['queueTime', messageType],
+      stats.summarizeStats(get(queueTimeByMessageType, messageType), statOptions));
+    set(summary, ['processingTime', messageType],
+      stats.summarizeStats(get(processingTimeByMessageType, messageType), statOptions));
+
+    return summary;
+  }, {});
+
+  return {
+    byPluginName,
+    byMessageType
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return Promise.map(sources, (source) =&gt; source.findUrls(this))
+    .then(() =&gt; this.startProcessingQueues())
+    .then(() =&gt; this.drainAllQueues())
+    .then(() =&gt; this.postMessage(make('summarize')))
+    .then(() =&gt; this.drainAllQueues())
+    .then(() =&gt; {
+      if (this.options.queueStats) {
+        log.info(JSON.stringify(queueStats.<span class="apidocCodeKeywordSpan">generateStatistics</span>(), null, 2));
+      }
+    })
+    .return(this.errors);
+}
+
+postMessage(message) {
+  validateMessageFormat(message);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.queueStatistics.registerProcessingTime" id="apidoc.element.sitespeed.io.queueStatistics.registerProcessingTime">
+        function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>registerProcessingTime
+        <span class="apidocSignatureSpan">(message, plugin, nanos)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerProcessingTime(message, plugin, nanos) {
+  messageTypes.add(message.type);
+  pluginNames.add(plugin.name());
+
+  stats.pushStats(processingTimeByMessageType, message.type, nanos / 1000000);
+  stats.pushStats(processingTimeByPluginName, plugin.name(), nanos / 1000000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+
+        const message = obj.item;
+
+        const processingDuration = process.hrtime(messageWaitingStart[message.uuid]),
+          processingNanos = processingDuration[0] * 1e9 + processingDuration[1];
+
+        queueStats.<span class="apidocCodeKeywordSpan">registerProcessingTime</span>(message, queue.plugin, processingNanos);
+      });
+
+      return {plugin, queue};
+    });
+}
+
+run(sources) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.queueStatistics.registerQueueTime" id="apidoc.element.sitespeed.io.queueStatistics.registerQueueTime">
+        function <span class="apidocSignatureSpan">sitespeed.io.queueStatistics.</span>registerQueueTime
+        <span class="apidocSignatureSpan">(message, plugin, nanos)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerQueueTime(message, plugin, nanos) {
+  messageTypes.add(message.type);
+  pluginNames.add(plugin.name());
+
+  stats.pushStats(queueTimeByMessageType, message.type, nanos / 1000000);
+  stats.pushStats(queueTimeByPluginName, plugin.name(), nanos / 1000000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+queue.processingStarted((obj) =&gt; {
+  const message = obj.item;
+
+  const waitingDuration = process.hrtime(messageWaitingStart[message.uuid]),
+    waitingNanos = waitingDuration[0] * 1e9 + waitingDuration[1];
+
+  queueStats.<span class="apidocCodeKeywordSpan">registerQueueTime</span>(message, queue.plugin, waitingNanos);
+
+  messageProcessingStart[message.uuid] = process.hrtime();
+});
+
+
+// FIXME handle rejections (i.e. failures while processing messages) properly
+queue.processingEnded((obj) =&gt; {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.statsHelpers" id="apidoc.module.sitespeed.io.statsHelpers">module sitespeed.io.statsHelpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.statsHelpers.pushGroupStats" id="apidoc.element.sitespeed.io.statsHelpers.pushGroupStats">
+        function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>pushGroupStats
+        <span class="apidocSignatureSpan">(target, domainTarget, path, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pushGroupStats(target, domainTarget, path, data) {
+  this.pushStats(target, path, data);
+  this.pushStats(domainTarget, path, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.statsHelpers.pushStats" id="apidoc.element.sitespeed.io.statsHelpers.pushStats">
+        function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>pushStats
+        <span class="apidocSignatureSpan">(target, path, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pushStats(target, path, data) {
+  if (typeof data !== 'number')
+    throw new Error('Tried to add ' + data + ' to stats');
+
+  const stats = get(target, path, new Stats());
+  stats.push(data);
+  set(target, path, stats);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+pluginNames = new Set();
+
+module.exports = {
+registerQueueTime(message, plugin, nanos) {
+  messageTypes.add(message.type);
+  pluginNames.add(plugin.name());
+
+  stats.<span class="apidocCodeKeywordSpan">pushStats</span>(queueTimeByMessageType, message.type, nanos / 1000000);
+  stats.pushStats(queueTimeByPluginName, plugin.name(), nanos / 1000000);
+},
+
+registerProcessingTime(message, plugin, nanos) {
+  messageTypes.add(message.type);
+  pluginNames.add(plugin.name());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.statsHelpers.setStatsSummary" id="apidoc.element.sitespeed.io.statsHelpers.setStatsSummary">
+        function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>setStatsSummary
+        <span class="apidocSignatureSpan">(target, path, stats)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setStatsSummary(target, path, stats) {
+  set(target, path, this.summarizeStats(stats));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.statsHelpers.summarizeStats" id="apidoc.element.sitespeed.io.statsHelpers.summarizeStats">
+        function <span class="apidocSignatureSpan">sitespeed.io.statsHelpers.</span>summarizeStats
+        <span class="apidocSignatureSpan">(stats, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">summarizeStats(stats, options) {
+  if (stats.length === 0) {
+    return undefined;
+  }
+
+  options = options || {};
+  let percentiles = options.percentiles || [0, 90, 100];
+  let decimals = options.decimals || 0;
+  let data = {
+    median: stats.median().toFixed(decimals),
+    mean: stats.amean().toFixed(decimals)
+  };
+  percentiles.forEach((p) =&gt; {
+    let name = percentileName(p);
+    const percentile = stats.percentile(p);
+    if (Number.isFinite(percentile)) {
+      data[name] = percentile.toFixed(decimals);
+    } else {
+      throw new Error('Failed to calculate ' + name + ' for stats: ' + JSON.stringify(stats, null, 2));
+    }
+  });
+  if (options.includeSum) {
+    data.sum = stats.Î£().toFixed(decimals);
+  }
+
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const statOptions = {
+  percentiles: [0, 100],
+  includeSum: true
+};
+
+const byPluginName = Array.from(pluginNames).reduce((summary, pluginName) =&gt; {
+  set(summary, ['queueTime', pluginName],
+    stats.<span class="apidocCodeKeywordSpan">summarizeStats</span>(get(queueTimeByPluginName, pluginName), statOptions));
+  set(summary, ['processingTime', pluginName],
+    stats.summarizeStats(get(processingTimeByPluginName, pluginName), statOptions));
+
+  return summary;
+}, {});
+
+const byMessageType = Array.from(messageTypes).reduce((summary, messageType) =&gt; {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.url_source" id="apidoc.module.sitespeed.io.url_source">module sitespeed.io.url_source</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.url_source.findUrls" id="apidoc.element.sitespeed.io.url_source.findUrls">
+        function <span class="apidocSignatureSpan">sitespeed.io.url_source.</span>findUrls
+        <span class="apidocSignatureSpan">(queue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findUrls(queue) {
+  for (const url of this.options.urls) {
+    queue.postMessage(make('url', {}, {url: url, group: urlParser.parse(url).hostname}));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      });
+
+      return {plugin, queue};
+    });
+}
+
+run(sources) {
+  return Promise.map(sources, (source) =&gt; source.<span class="apidocCodeKeywordSpan">findUrls</span>(this))
+    .then(() =&gt; this.startProcessingQueues())
+    .then(() =&gt; this.drainAllQueues())
+    .then(() =&gt; this.postMessage(make('summarize')))
+    .then(() =&gt; this.drainAllQueues())
+    .then(() =&gt; {
+      if (this.options.queueStats) {
+        log.info(JSON.stringify(queueStats.generateStatistics(), null, 2));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.url_source.open" id="apidoc.element.sitespeed.io.url_source.open">
+        function <span class="apidocSignatureSpan">sitespeed.io.url_source.</span>open
+        <span class="apidocSignatureSpan">(context, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open(context, options) {
+  this.options = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sitespeed.io.util" id="apidoc.module.sitespeed.io.util">module sitespeed.io.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.util.throwIfMissing" id="apidoc.element.sitespeed.io.util.throwIfMissing">
+        function <span class="apidocSignatureSpan">sitespeed.io.util.</span>throwIfMissing
+        <span class="apidocSignatureSpan">(options, keys, namespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">throwIfMissing(options, keys, namespace) {
+  let missingKeys = keys.filter((key) =&gt; !options[key]);
+  if (missingKeys.length &gt; 0) {
+    throw new Error(format('Required option(s) %s need to be specified in namespace "%s"',
+      missingKeys.map((s) =&gt; '"' + s + '"'), namespace));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sitespeed.io.util.toArray" id="apidoc.element.sitespeed.io.util.toArray">
+        function <span class="apidocSignatureSpan">sitespeed.io.util.</span>toArray
+        <span class="apidocSignatureSpan">(arrayLike)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toArray(arrayLike) {
+  if (arrayLike === undefined || arrayLike === null) {
+    return [];
+  }
+  if (Array.isArray(arrayLike)) {
+    return arrayLike;
+  }
+  return [arrayLike];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
